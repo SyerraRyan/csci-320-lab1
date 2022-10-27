@@ -9,7 +9,7 @@
 
 
 char* readString(char* fileName){
-    char* readWord= malloc(MAX_LINE_LEN*sizeof(char()));
+    char* readWord= malloc(MAX_LINE_LEN*sizeof(char));
     FILE* txtfile= fopen(fileName,"r");
 
     strcpy(readWord, fgets(readWord, MAX_LINE_LEN-1,txtfile));
