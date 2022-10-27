@@ -27,7 +27,7 @@ char* mysteryExplode(const char* str){
 
     for(int i = 0; i < stringLength; i++){
         for(int j = 0; j <= i; j++){
-            strcpy(memSpace, strncat(memSpace,&word[i],1));
+            strcpy(memSpace, strncat(memSpace,&str[i],1));
         }
     }
 
