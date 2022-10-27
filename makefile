@@ -1,4 +1,4 @@
-default: _explode_
+default: lab1
 
 _explode_: main.o
 	gcc -o _explode_ main.o lab1.c
