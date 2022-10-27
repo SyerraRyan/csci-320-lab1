@@ -9,8 +9,8 @@
 
 
 char* readString(char* fileName){
-    char* readWord= malloc(MAX_LINE_LEN*sizeof(char));
-    FILE* txtfile= fopen(fileName,"r");
+    char* readWord = malloc(MAX_LINE_LEN*sizeof(char));
+    FILE* txtfile = fopen(fileName,"r");
 
     strcpy(readWord, fgets(readWord, MAX_LINE_LEN-1,txtfile));
     fclose(txtfile);
@@ -21,7 +21,7 @@ char* readString(char* fileName){
 
 char* mysteryExplode(const char* str){
 
-    int stringLength= strlen(word)-1;
+    int stringLength = strlen(word)-1;
     int sizeString = ((stringLength*(stringLength+1))/2);
     char* memSpace = calloc(sizeString,1);
 
