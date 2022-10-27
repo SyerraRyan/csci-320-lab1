@@ -1,25 +1,26 @@
 /*
- * Implement your solution in thi file
+ * Implement your solution in this file
  *
  */
 #include "lab1.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#define MAX_LINE_LEN 100
 
 char* readString(char* fileName){
     FILE* textfile;
-    char* readAlloc;
+    char* readAll;
 
-    readAlloc = malloc(MAX_LINE_LEN*sizeof(char()));
+    readAll = malloc(MAX_LINE_LEN*sizeof(char())+1);
 
     textfile = fopen(fileName,"r");
 
-    strcpy(readAlloc, fgets(readAlloc, MAX_LINE_LEN,textfile));
+    strcpy(readAll, fgets(readAll, MAX_LINE_LEN,textfile));
 
     fclose(textfile);
 
-    return readAlloc;
+    return readAll;
 
 }
 
@@ -33,8 +34,8 @@ char* mysteryExplode(const char* word){
 
 
 
-    for(int k = 0; k < sizeOfWord; k++){
-        for(int i = 0; i <= k; i++){
+    for(int i = 0; i < sizeOfWord; i++){
+        for(int j = 0; j <= i; j++){
             strcpy(memAlloc, strncat(memAlloc,&word[i],1));
         }
 
