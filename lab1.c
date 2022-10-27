@@ -9,39 +9,29 @@
 
 
 char* readString(char* fileName){
-    FILE* textfile;
-    char* readAll;
+    char* readWord= malloc(MAX_LINE_LEN*sizeof(char()));
+    FILE* txtfile= fopen(fileName,"r");
 
-    readAll = malloc(MAX_LINE_LEN*sizeof(char())+1);
-
-    textfile = fopen(fileName,"r");
-
-    strcpy(readAll, fgets(readAll, MAX_LINE_LEN,textfile));
-
-    fclose(textfile);
-
-    return readAll;
+    strcpy(readWord, fgets(readWord, MAX_LINE_LEN-1,txtfile));
+    fclose(txtfile);
+    
+    return readWord;
 
 }
 
-char* mysteryExplode(const char* word){
+char* mysteryExplode(const char* str){
 
-    int sizeOfWord = strlen(word)-1;
+    int stringLength= strlen(word)-1;
+    int sizeString = ((stringLength*(stringLength+1))/2);
+    char* memSpace = calloc(sizeString,1);
 
-    int explodeSize = ((sizeOfWord*(sizeOfWord +1))/2);
-
-    char* memAlloc = calloc(explodeSize + 1,1);
-
-
-
-    for(int i = 0; i < sizeOfWord; i++){
+    for(int i = 0; i < stringLength; i++){
         for(int j = 0; j <= i; j++){
-            strcpy(memAlloc, strncat(memAlloc,&word[i],1));
+            strcpy(memSpace, strncat(memSpace,&word[i],1));
         }
-
     }
 
-    return memAlloc;
+    return memSpace;
 
 
 }
