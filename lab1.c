@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#define MAX_LINE_LEN 100
+
 
 char* readString(char* fileName){
     FILE* textfile;
